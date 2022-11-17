@@ -4,7 +4,7 @@ let hasDriversLicence = false;
 const passTest = true;
 if (passTest) hasDriversLicence = true;
 if (hasDriversLicence) console.log(`i can drive`);
-*/
+
 
 ///////////////////////////////////////////////
 // FUNCTION
@@ -80,3 +80,61 @@ const India = percentageOfWorld2(1366);
 const Pakistan = percentageOfWorld2(212);
 const Bangladesh = percentageOfWorld2(164.8);
 console.log(India, Pakistan, Bangladesh);
+
+*/
+
+// ARROW FUNCTION
+
+const calAge3 = (birthhhYear) => 2037 - birthhhYear;
+const age3 = calAge3(2001);
+console.log(age3);
+
+const yearsUntileRetirement = (birthhYear, firtstName) => {
+  const age = 2037 - birthhYear;
+  const retirement = 65 - age;
+
+  return `${firtstName} retires in ${retirement} years.`;
+};
+console.log(yearsUntileRetirement(1991, "aditya"));
+console.log(yearsUntileRetirement(1980, "anshul"));
+
+//  ASSIGNMENT QUESTION
+
+const percentageOfWorld3 = (population) => (population / 7900) * 100;
+const percIndia = percentageOfWorld3(1366);
+const percPakistan = percentageOfWorld3(212);
+const percBangladesh = percentageOfWorld3(164.8);
+console.log(percIndia, percPakistan, percBangladesh);
+
+////////////////////////////////////////////////////////////
+//  FUNCTION CALLING ANOTHER FUNCTION
+
+const cutFruitPieces = function (fruit) {
+  return fruit * 4;
+};
+
+function fruitProcessor(apple, orange) {
+  const piecesApple = cutFruitPieces(apple);
+  const piecesOrange = cutFruitPieces(orange);
+
+  const juice = `juice with ${piecesApple} pieces of  apple and ${piecesOrange} pieces of orange. `;
+  return juice;
+}
+
+console.log(fruitProcessor(4, 6));
+
+//  ASSIGNMENT QUESTIONS
+
+function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+
+function describePopulation(country, population) {
+  const percentage = percentageOfWorld1(population);
+  return `${country} has ${population} million people, 
+  which is about ${percentage} of the world`;
+}
+
+console.log(describePopulation("India", 1136));
+console.log(describePopulation("Pakistan", 212));
+console.log(describePopulation("Bangladesh", 164.8));
