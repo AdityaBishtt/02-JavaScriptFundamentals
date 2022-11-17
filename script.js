@@ -81,7 +81,7 @@ const Pakistan = percentageOfWorld2(212);
 const Bangladesh = percentageOfWorld2(164.8);
 console.log(India, Pakistan, Bangladesh);
 
-*/
+
 
 // ARROW FUNCTION
 
@@ -138,3 +138,48 @@ function describePopulation(country, population) {
 console.log(describePopulation("India", 1136));
 console.log(describePopulation("Pakistan", 212));
 console.log(describePopulation("Bangladesh", 164.8));
+*/
+
+////////////////////////////////////////////////////////
+// ARRAYS
+
+const friends = ["RAHUL", "ANSHUL", "PIYUSH"];
+console.log(friends);
+
+const Year = new Array(2001, 2000, 1995);
+console.log(Year);
+
+console.log(friends[0]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 2]);
+
+friends[2] = "PRITISH";
+console.log(friends);
+
+const firstName = "ADITYA";
+const aditya = [firstName, "BISHT", 2022 - 2001, "STUDENT", friends];
+console.log(aditya);
+console.log(aditya.length);
+
+// Exercise
+
+const calAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const years = [1990, 2000, 2001, 2007, 2009];
+
+const age1 = calAge(years[0]);
+const age2 = calAge(years[1]);
+const age3 = calAge(years[3]);
+const age4 = calAge(years[years.length - 1]);
+console.log(age1, age2, age3, age4);
+
+const age = [
+  calAge(years[0]),
+  calAge(years[1]),
+  calAge(years[3]),
+  calAge(years[years.length - 1]),
+];
+console.log(age);
