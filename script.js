@@ -138,7 +138,7 @@ function describePopulation(country, population) {
 console.log(describePopulation("India", 1136));
 console.log(describePopulation("Pakistan", 212));
 console.log(describePopulation("Bangladesh", 164.8));
-*/
+
 
 ////////////////////////////////////////////////////////
 // ARRAYS
@@ -183,3 +183,38 @@ const age = [
   calAge(years[years.length - 1]),
 ];
 console.log(age);
+*/
+
+/////////////////////////////////////////////////////////
+// Arrays operation (method)
+
+const friends = ["RAHUL", "ANSHUL", "PIYUSH"];
+
+// add element  (push)
+const newLength = friends.push("NIKHIL", "SABHYA");
+console.log(friends);
+console.log(newLength);
+
+// add element at beginning  (unshift)
+friends.unshift("PRITISH");
+console.log(friends);
+
+// remove element from the last  (pop)
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+// remove  the first element  (shift)
+friends.shift();
+console.log(friends);
+
+// to return the index value of an element  (.indexOf)
+console.log(friends.indexOf("NIKHIL"));
+
+// to know if the element is present in array  (includes)
+console.log(friends.includes("ANSHUL"));
+console.log(friends.includes("PRITISH"));
+
+if (friends.includes("ANSHUL")) {
+  console.log("You have a friend called ANSHUL");
+}
