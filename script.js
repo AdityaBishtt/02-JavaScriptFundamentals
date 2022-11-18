@@ -92,9 +92,11 @@ console.log(age3);
 const yearsUntileRetirement = (birthhYear, firtstName) => {
   const age = 2037 - birthhYear;
   const retirement = 65 - age;
-
+// returns retirement 
   return `${firtstName} retires in ${retirement} years.`;
 };
+
+
 console.log(yearsUntileRetirement(1991, "aditya"));
 console.log(yearsUntileRetirement(1980, "anshul"));
 
@@ -140,27 +142,69 @@ console.log(describePopulation("Pakistan", 212));
 console.log(describePopulation("Bangladesh", 164.8));
 
 
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const yearsUntileRetirement = function (birthYear, firtstName) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+  if (retirement > 0) {
+    console.log(`${firtstName} retires in ${retirement} years.`);
+    return retirement;
+  } else {
+    console.log(`${firtstName} has already retired🎉`);
+    return -1;
+  }
+};
+
+console.log(yearsUntileRetirement(2001, "Aditya"));
+console.log(yearsUntileRetirement(1971, "Anshul"));
+
+// CODING CHALLENGE
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+let scoreDolphins = calcAverage(44, 23, 71);
+let scoreKoalas = calcAverage(65, 54, 49);
+console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphines win 🏆 (${scoreDolphins} vs. ${scoreKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Koalas win 🏆 (${scoreKoalas} vs. ${scoreDolphins})`);
+  } else {
+    console.log(`No team wins`);
+  }
+};
+
+//test 1
+checkWinner(scoreDolphins, scoreKoalas);
+//test 2
+scoreDolphins = calcAverage(85, 54, 41);
+scoreKoalas = calcAverage(23, 34, 27);
+checkWinner(scoreDolphins, scoreKoalas);
 ////////////////////////////////////////////////////////
 // ARRAYS
 
-const friends = ["RAHUL", "ANSHUL", "PIYUSH"];
-console.log(friends);
+// const friends = ["RAHUL", "ANSHUL", "PIYUSH"];
+// console.log(friends);
 
-const Year = new Array(2001, 2000, 1995);
-console.log(Year);
+// const Year = new Array(2001, 2000, 1995);
+// console.log(Year);
 
-console.log(friends[0]);
+// console.log(friends[0]);
 
-console.log(friends.length);
-console.log(friends[friends.length - 2]);
+// console.log(friends.length);
+// console.log(friends[friends.length - 2]);
 
-friends[2] = "PRITISH";
-console.log(friends);
+// friends[2] = "PRITISH";
+// console.log(friends);
 
-const firstName = "ADITYA";
-const aditya = [firstName, "BISHT", 2022 - 2001, "STUDENT", friends];
-console.log(aditya);
-console.log(aditya.length);
+// const firstName = "ADITYA";
+// const aditya = [firstName, "BISHT", 2022 - 2001, "STUDENT", friends];
+// console.log(aditya);
+// console.log(aditya.length);
 
 // Exercise
 
@@ -183,7 +227,6 @@ const age = [
   calAge(years[years.length - 1]),
 ];
 console.log(age);
-*/
 
 /////////////////////////////////////////////////////////
 // Arrays operation (method)
@@ -218,3 +261,42 @@ console.log(friends.includes("PRITISH"));
 if (friends.includes("ANSHUL")) {
   console.log("You have a friend called ANSHUL");
 }
+*/
+//////////////////////////////////////////////////////////////////
+// OBJECTS
+
+const aditya = {
+  firstName: "Aditya",
+  lastName: "Bisht",
+  age: 2037 - 1991,
+  job: "student",
+  friends: ["Anshul", "Rahul", "Sabhya"],
+};
+console.log(aditya);
+
+console.log(aditya.lastName);
+console.log(aditya["lastName"]);
+
+const nameKey = "Name";
+console.log(aditya["first" + nameKey]);
+console.log(aditya["last" + nameKey]);
+
+const intrestedIn = prompt(
+  `What do you want to know about Aditya? Choose between firstName, lastName, age, job, and friends `
+);
+
+if (aditya[intrestedIn]) {
+  console.log(aditya[intrestedIn]);
+} else {
+  console.log(
+    `Wrong request! Choose between firstName, lastName, age, job, and friends `
+  );
+}
+
+aditya.location = "India";
+aditya["twitter"] = "@Aditya_Bisht";
+console.log(aditya);
+
+console.log(
+  `${aditya.firstName} has ${aditya.friends.length} friends, and his best friend is called ${aditya.friends[0]}`
+);
