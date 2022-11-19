@@ -344,7 +344,7 @@ console.log(aditya.friends[0]);
 console.log(aditya.age);
 
 console.log(aditya.getSummary());
-*/
+
 //////////////////////////////////////////////////////////////////////
 // CODING CHALLENGE
 
@@ -391,6 +391,8 @@ const bill = [125, 555, 444];
 const tips = [calcTip(bill[0]), calcTip(bill[1]), calcTip(bill[2])];
 const totals = [bill[0] + tips[0], bill[1] + tips[1], bill[2] + tips[2]];
 console.log(bill, tips, totals);
+
+
 //////////////////////////////////////////////////////////
 // FOR LOOPS
 for (let rep = 1; rep <= 10; rep++) {
@@ -451,4 +453,15 @@ for (let exercise = 1; exercise < 4; exercise++) {
   for (let reps = 1; reps < 6; reps++) {
     console.log(`Exercise ${exercise}: Lifting weights repetition ${reps} `);
   }
+}
+*/
+
+//////////////////////////////////////////////////////
+// While loops
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6) {
+  console.log(`you rolled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`Loop is end----------`);
 }
