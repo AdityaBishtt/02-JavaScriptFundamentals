@@ -261,7 +261,7 @@ console.log(friends.includes("PRITISH"));
 if (friends.includes("ANSHUL")) {
   console.log("You have a friend called ANSHUL");
 }
-*/
+
 //////////////////////////////////////////////////////////////////
 // OBJECTS
 
@@ -300,3 +300,155 @@ console.log(aditya);
 console.log(
   `${aditya.firstName} has ${aditya.friends.length} friends, and his best friend is called ${aditya.friends[0]}`
 );
+
+
+/////////////////////////////////////////////////////////////
+// Object Methods
+
+const aditya = {
+  firstName: "Aditya",
+  lastName: "Bisht",
+  birthYear: 2001,
+  job: "student",
+  friends: ["Mayank", "Anshul", "Nikhil"],
+  hasDriversLicence: false,
+
+  // calcAge: function (birthYear) {
+  //   return 2022 - birthYear;
+  // },
+
+  // calcAge: function () {
+  //   // console.log(this);
+  //   return 2022 - this.birthYear;
+  // },
+
+  calcAge: function () {
+    this.age = 2022 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-years old ${
+      this.job
+    }, and has ${
+      this.hasDriversLicence === true ? "a" : "no"
+    } driver's licence.`;
+  },
+};
+
+console.log(aditya.calcAge());
+// console.log(aditya["calcAge"](2001));
+console.log(aditya.friends.length);
+console.log(aditya.friends[0]);
+
+console.log(aditya.age);
+
+console.log(aditya.getSummary());
+*/
+//////////////////////////////////////////////////////////////////////
+// CODING CHALLENGE
+
+const mark = {
+  fullName: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calsBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+};
+
+const john = {
+  fullName: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calsBMI: function () {
+    this.bmi = this.mass / (this.height * this.height);
+    return this.bmi;
+  },
+};
+mark.calsBMI();
+john.calsBMI();
+console.log(mark.bmi, john.bmi);
+
+if (mark.bmi > john.bmi) {
+  console.log(
+    `${mark.fullName}'s BMI (${mark.bmi}) is higher tham ${john.fullName}'s (${john.bmi})`
+  );
+} else if (john.bmi > mark.bmi) {
+  console.log(
+    `${john.fullName}'s BMI (${john.bmi}) is higher tham ${mark.fullName}'s (${mark.bmi})`
+  );
+}
+/////////////////////////////////////////////////////////////////
+// ARRAYS CODING CHALLENGE
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bill = [125, 555, 444];
+const tips = [calcTip(bill[0]), calcTip(bill[1]), calcTip(bill[2])];
+const totals = [bill[0] + tips[0], bill[1] + tips[1], bill[2] + tips[2]];
+console.log(bill, tips, totals);
+//////////////////////////////////////////////////////////
+// FOR LOOPS
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weight repetition ${rep}🏋️‍♀️`);
+}
+
+const aditya = [
+  "Aditya",
+  "Bisht",
+  21,
+  "student",
+  ["mayank", "anshul", "nikhil"],
+  true,
+];
+
+const type = [];
+
+for (let i = 0; i < aditya.length; i++) {
+  console.log(aditya[i], typeof aditya[i]);
+
+  type.push(typeof aditya[i]);
+}
+console.log(type);
+
+const years = [1991, 1995, 1999, 2006];
+const age = [];
+for (let i = 0; i < years.length; i++) {
+  age.push(2037 - years[i]);
+}
+console.log(age);
+
+// continue statement
+console.log(`-------continue with number------------`);
+for (let i = 0; i < aditya.length; i++) {
+  if (typeof aditya[i] !== "string") continue;
+  console.log(aditya[i], typeof aditya[i]);
+}
+
+// break statement
+console.log(`-------break with number------------`);
+for (let i = 0; i < aditya.length; i++) {
+  if (typeof aditya[i] === "number") break;
+  console.log(aditya[i]);
+}
+
+///////////////////////////////////////////////////////
+// LOOPING BACKWARD AND LOPPS IN LOOPS
+console.log(`-----------looping backwards and loops in loops `);
+for (let i = aditya.length - 1; i >= 0; i--) {
+  console.log(i, aditya[i], typeof aditya[i]);
+}
+
+// loops in loops
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`---------Starting exercise ${exercise}`);
+
+  for (let reps = 1; reps < 6; reps++) {
+    console.log(`Exercise ${exercise}: Lifting weights repetition ${reps} `);
+  }
+}
